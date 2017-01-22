@@ -19,3 +19,14 @@ matrix:
 cache: python
 install: pip install tox
 script: tox -e py
+
+deploy:
+  provider: pypi
+  on:
+    tags: true
+    python: 3.6
+  user: hpk
+  password:
+    secure: <encrypted_password> <!--otherwise use api_key-->
+  distributions: sdist bdist_wheel
+  skip_upload_docs: true
