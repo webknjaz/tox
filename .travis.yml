@@ -20,5 +20,5 @@ matrix:
   - python: pypy3
 
 cache: python
-install: pip install -e .#egg=tox
+install: pip install -e file://`pwd`#egg=tox
 script: tox -e py
