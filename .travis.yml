@@ -12,6 +12,8 @@ python:
 - pypy
 - pypy3
 
+env: TOXENV=py
+
 matrix:
   fast_finish: true
   allow_failures:
@@ -20,6 +22,9 @@ matrix:
   - python: nightly
   - python: pypy
   - python: pypy3
+  include:
+  - python: 3.2
+    env: TOXENV=py32
 
 cache: python
 install: pip install -e file://`pwd`#egg=tox
